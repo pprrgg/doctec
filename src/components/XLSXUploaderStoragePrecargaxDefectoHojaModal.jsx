@@ -247,13 +247,15 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
 
                     {excelDataFromSession && (
                         <>
-                            <Box sx={{ overflowX: 'auto' }}>
-                                <Tabs value={activeTab} onChange={handleTabChange} variant="scrollable" scrollButtons="auto">
-                                    {Object.keys(excelDataFromSession).map((sheet, index) => (
-                                        <Tab key={index} label={sheet} />
-                                    ))}
-                                </Tabs>
-                            </Box>
+<Box sx={{ overflowX: 'auto' }}>
+    <Tabs value={activeTab} onChange={handleTabChange} variant="scrollable" scrollButtons="auto">
+        {Object.keys(excelDataFromSession)
+            .filter(sheet => !sheet.toLowerCase().includes('sheet')) // Filtra los que NO contienen "sheet"
+            .map((sheet, index) => (
+                <Tab key={index} label={sheet} />
+            ))}
+    </Tabs>
+</Box>
 
                             <TableContainer component={Paper} sx={{ mt: 2 }}>
                                 <Table size="small">
