@@ -40,8 +40,10 @@ const PDFRenderer = () => {
   const mensajes = [
     "Conectando al servidor, por favor espere...",
     "Conectando al servidor, por favor espere...",
-    "Inicializando el proceso de simulación...",
     "Cargando las primeras configuraciones...",
+    "Conectando al servidor, por favor espere...",
+    "Cargando las primeras configuraciones...",
+    "Inicializando el proceso de simulación...",
     "Verificando los datos iniciales...",
     "Simulando operación, esto tomará unos segundos...",
     "Procesando información en segundo plano...",
