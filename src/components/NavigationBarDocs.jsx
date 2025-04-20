@@ -101,7 +101,7 @@ const Fichas = () => {
     const handleFichaClick = (ficha) => {
         // Actualizar sessionStorage antes de la navegación
         sessionStorage.setItem('selectedFicha', JSON.stringify(ficha));
-        loadDataFromExcel(`excel/${ficha.grupo}/${ficha.sector}/${ficha.cod}.xlsx`);
+        loadDataFromExcel(`routers/${ficha.grupo}/${ficha.sector}/${ficha.cod}.xlsx`);
         
         navigate(`/doc`);
     };

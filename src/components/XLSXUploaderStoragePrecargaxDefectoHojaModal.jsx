@@ -32,7 +32,7 @@ import {
     CloudUpload as CloudUploadIcon,
     Map as MapIcon,
 } from "@mui/icons-material";
-
+import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MapaModal from "./MapaModal";
@@ -174,10 +174,11 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
         }
         return [];
     }, [activeSheet, excelDataFromSession]);
-
+    
     const menuOptions = [
         // { label: "Cancelar", icon: <CloseIcon />, onClick: cerrarModalx },
-        { label: "Importar", icon: <CloudUploadIcon />, onClick: handleImportar },
+        // { label: "Importar", icon: <CloudUploadIcon />, onClick: handleImportar },
+        { label: "Importar", icon: <AttachFileIcon />, onClick: handleImportar },
         { label: "Exportar", icon: <CloudDownloadIcon />, onClick: handleExport },
         { label: "Ubicación", icon: <MapIcon />, onClick: handleOpenMapaModal },
         { label: "Calcular", icon: <CalculateIcon />, onClick: handleRecalculate },

@@ -4,24 +4,29 @@ from pathlib import Path
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-# Directorios de origen y destino
-src_root = Path('/home/pk/Desktop/backend/app/routers')
-dst_root = Path('../public/pdfs')
+origen = '/home/pk/Desktop/backend/app/routers'
+destino = '../public'
 
-# Eliminar la carpeta destino si ya existe
-if dst_root.exists() and dst_root.is_dir():
-    shutil.rmtree(dst_root)
-    print(f'Carpeta eliminada: {dst_root}')
-    
-# Recorrer los archivos recursivamente
-for file in src_root.rglob('*.pdf'):
-    if file.is_file() and file.name.endswith('_.pdf'):
-        # Obtener la ruta relativa al directorio de origen
-        relative_path = file.relative_to(src_root)
-        # Crear la ruta completa en el directorio destino
-        dst_file = dst_root / relative_path
-        # Crear directorios si no existen
-        dst_file.parent.mkdir(parents=True, exist_ok=True)
-        # Copiar archivo
-        shutil.copy2(file, dst_file)
-        print(f'Copiado: {file} -> {dst_file}')
+# Ruta completa de destino
+destino_completo = os.path.join(destino, 'routers')
+
+# Eliminar la carpeta de destino si existe
+if os.path.exists(destino_completo):
+    shutil.rmtree(destino_completo)
+
+# Copiar recursivamente la carpeta de origen al destino
+shutil.copytree(origen, destino_completo)
+
+for root, dirs, files in os.walk('../public/routers'):
+    for file in files:
+        if file.endswith('.py'):
+            ruta_completa = os.path.join(root, file)
+            print(f'Eliminando: {ruta_completa}')
+            os.remove(ruta_completa)
+
+
+    # Eliminar la carpeta 'assets' si existe
+    if 'assets' in dirs:
+        ruta_assets = os.path.join(root, 'assets')
+        print(f'Eliminando carpeta assets: {ruta_assets}')
+        shutil.rmtree(ruta_assets)  # Elimina la carpeta 'assets' y su contenido
