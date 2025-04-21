@@ -275,67 +275,67 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
                                                     const options = isCommaSeparated ? originalCell.split(';') : [];
 
                                                     return (
-<TableCell key={cellIndex}>
-    {isCommaSeparated ? (
-        <Select
-    value={originalCell.split(';')[0].trim()}
-    onChange={(e) => {
-        const selected = e.target.value;
+                                                        <TableCell key={cellIndex}>
+                                                            {isCommaSeparated ? (
+                                                                <Select
+                                                                    value={originalCell.split(';')[0].trim()}
+                                                                    onChange={(e) => {
+                                                                        const selected = e.target.value;
 
-        const sessionData = JSON.parse(sessionStorage.getItem("excelData"));
-        const sheetData = [...sessionData[activeSheet]];
+                                                                        const sessionData = JSON.parse(sessionStorage.getItem("excelData"));
+                                                                        const sheetData = [...sessionData[activeSheet]];
 
-        const currentOriginalCell = sheetData[rowIndex + 1][cellIndex];
+                                                                        const currentOriginalCell = sheetData[rowIndex + 1][cellIndex];
 
-        const allOptions = currentOriginalCell
-            .split(';')
-            .map(opt => opt.trim())
-            .filter(Boolean);
+                                                                        const allOptions = currentOriginalCell
+                                                                            .split(';')
+                                                                            .map(opt => opt.trim())
+                                                                            .filter(Boolean);
 
-        const reordered = [selected, ...allOptions.filter(opt => opt !== selected)].join(';');
+                                                                        const reordered = [selected, ...allOptions.filter(opt => opt !== selected)].join(';');
 
-        sheetData[rowIndex + 1][cellIndex] = reordered;
+                                                                        sheetData[rowIndex + 1][cellIndex] = reordered;
 
-        sessionData[activeSheet] = sheetData;
-        sessionStorage.setItem("excelData", JSON.stringify(sessionData));
-        setExcelDataFromSession(sessionData); // Fuerza refresco
-    }}
-    size="small"
-    sx={{ width: '100%' }}
->
-    {originalCell
-        .split(';')
-        .map((option, index) => (
-            <MenuItem key={index} value={option.trim()}>
-                {option.trim()}
-            </MenuItem>
-        ))}
-</Select>
+                                                                        sessionData[activeSheet] = sheetData;
+                                                                        sessionStorage.setItem("excelData", JSON.stringify(sessionData));
+                                                                        setExcelDataFromSession(sessionData); // Fuerza refresco
+                                                                    }}
+                                                                    size="small"
+                                                                    sx={{ width: '100%' }}
+                                                                >
+                                                                    {originalCell
+                                                                        .split(';')
+                                                                        .map((option, index) => (
+                                                                            <MenuItem key={index} value={option.trim()}>
+                                                                                {option.trim()}
+                                                                            </MenuItem>
+                                                                        ))}
+                                                                </Select>
 
-    ) : (
-        <div
-            contentEditable={cellIndex !== 0}
-            suppressContentEditableWarning
-            onBlur={(e) => {
-                if (cellIndex !== 0) {
-                    const newValue = e.target.innerText.trim();
+                                                            ) : (
+                                                                <div
+                                                                    contentEditable={cellIndex !== 0}
+                                                                    suppressContentEditableWarning
+                                                                    onBlur={(e) => {
+                                                                        if (cellIndex !== 0) {
+                                                                            const newValue = e.target.innerText.trim();
 
-                    // Modifica solo esta celda, dejando las demás intactas
-                    const sessionData = JSON.parse(sessionStorage.getItem("excelData"));
-                    const sheetData = [...sessionData[activeSheet]];
+                                                                            // Modifica solo esta celda, dejando las demás intactas
+                                                                            const sessionData = JSON.parse(sessionStorage.getItem("excelData"));
+                                                                            const sheetData = [...sessionData[activeSheet]];
 
-                    sheetData[rowIndex + 1][cellIndex] = newValue;
+                                                                            sheetData[rowIndex + 1][cellIndex] = newValue;
 
-                    sessionData[activeSheet] = sheetData;
-                    sessionStorage.setItem("excelData", JSON.stringify(sessionData));
-                    setExcelDataFromSession(sessionData); // Refresca la tabla
-                }
-            }}
-        >
-            {cell}
-        </div>
-    )}
-</TableCell>
+                                                                            sessionData[activeSheet] = sheetData;
+                                                                            sessionStorage.setItem("excelData", JSON.stringify(sessionData));
+                                                                            setExcelDataFromSession(sessionData); // Refresca la tabla
+                                                                        }
+                                                                    }}
+                                                                >
+                                                                    {cell}
+                                                                </div>
+                                                            )}
+                                                        </TableCell>
 
 
 
