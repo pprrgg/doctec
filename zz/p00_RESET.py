@@ -6,9 +6,7 @@ import subprocess
 
 SCRIPTS_TO_RUN = [
     "p12_fastapi_pdfs_2_react_public.py",
-    "p13_fastapi_json2catalogo_json.py",
-
-
+    "p13_public_routers2catalogo_json.py",
 ]
 # Ejecutar scripts
 

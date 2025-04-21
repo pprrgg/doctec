@@ -5,14 +5,22 @@
         "sector": "AAA",
         "grupo": "AAA",
         "cod": "Codigo456NombreSeparadoPorMayusculasSinEspacios",
-        "co": "CODIGO456"
+        "co": "CODIGO456N"
     },
     {
         "categoria": "libre",
-        "codigo": "AEP010 TERMINO DE POTENCIA",
+        "codigo": "AEP010 FACTURACIÓN POR POTENCIA DE HOJA DE LECTURAS",
         "sector": "Término_De_Potencia",
         "grupo": "Asesoría_Energética",
-        "cod": "Aep010TerminoDePotencia",
-        "co": "AEP010"
+        "cod": "Aep010FacturaciónPorPotenciaDeHojaDeLecturas",
+        "co": "AEP010F"
+    },
+    {
+        "categoria": "libre",
+        "codigo": "AEP030 OPTIMIZACIÓN DE POTENCIA",
+        "sector": "Término_De_Potencia",
+        "grupo": "Asesoría_Energética",
+        "cod": "Aep030OptimizaciónDePotencia",
+        "co": "AEP030O"
     }
 ]
