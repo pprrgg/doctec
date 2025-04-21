@@ -1,0 +1,307 @@
+
+
+\newcommand{\MostrarVariablesAlFinal}{}
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt,twocolumn]{article}
+\usepackage[top = 2cm, bottom = 2cm, left = 2cm, right = 2cm, asymmetric]{geometry} % Especificar los márgenes según la norma
+\usepackage[spanish]{babel}    
+
+\usepackage{graphicx}  % Para incluir imágenes si es necesario
+\usepackage{amsmath, amssymb}  % Para expresiones matemáticas
+\usepackage{fancyhdr}  % Para personalizar encabezados
+\usepackage{chngcntr}  % Para cambiar la numeración de apartados y subsecciones
+\usepackage{tocbibind}  % Para incluir bibliografía en la tabla de contenidos
+\usepackage{appendix}  % Para el formato de anexos
+\usepackage{lipsum}  % Para generar texto de relleno (dummy text)
+\usepackage{geometry}  % Para personalizar los márgenes
+\usepackage{multicol}  % Para columnas
+\usepackage{titlesec}  % Para personalizar los títulos de las secciones
+\usepackage[utf8]{inputenc}    
+\usepackage[T1]{fontenc}       
+\usepackage[pdftex,pdfencoding=auto, colorlinks=true, linkcolor=black, citecolor=black, filecolor=black, urlcolor=black]{hyperref}
+\usepackage{tocloft}           
+\usepackage{booktabs}          
+\usepackage{float} % Paquete necesario para usar la opción [H]
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tikz-qtree}
+\usepackage{smartdiagram}
+
+\usepackage{qrcode}            % Paquete para generar QR
+\usepackage{tabularx} % Agregar en el preámbulo
+\usepackage[absolute,overlay]{textpos} % Para posicionar objetos libremente
+\usepackage{underscore}
+\usepackage{pdfpages}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{OPTIMIZACIÓN DE POTENCIA}  % Nombre del documento en el encabezado izquierdo
+\fancyhead[C]{}  % Centro vacío
+\fancyhead[R]{\thepage}  % Numeración de páginas en el encabezado derecho
+% \renewcommand{\thepage}{\arabic{page}}  % Asegura la numeración de páginas en números arábigos
+
+% Definición de los anexos
+\newcommand{\annex}[1]{\section{Anexo #1} \addcontentsline{toc}{section}{Anexo #1}}
+\addto\captionsspanish{%
+  \renewcommand{\tablename}{Tabla}%
+  \renewcommand{\listtablename}{Índice de tablas}%
+}
+\title{{ \qrcode[height=1.3cm]{https://doctec.blog/} \\ \small Ref.:\uppercase{Aep030}}\\{\textbf{OPTIMIZACIÓN DE POTENCIA}}}
+\author{
+pp.ParticipantesP1NombreRaznSocial
+}
+\date{\today}
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+
+\begin{Form}
+	\maketitle
+
+	\tableofcontents  % Tabla de contenidos
+	\listoffigures    % Lista de graficos
+	\listoftables     % Lista de tablas
+
+
+
+    
+
+
+
+
+
+
+
+
+
+\section{Introduccióvvn}
+Este informe tiene como objetivo analizar y optimizar la potencia contratada en la factura eléctrica de una empresa dedicada a la fabricación de mallas electrosoldadas. La empresa actualmente tiene contratada una potencia de 200 kW en todos los periodos de la tarifa 6.1TD, lo que genera costes elevados debido a excesos de potencia. El objetivo es ajustar la potencia contratada para minimizar los costes anuales.
+
+\section{Metodología}
+Para optimizar la potencia contratada, se siguieron los siguientes pasos:
+
+\begin{enumerate}
+    \item \textbf{Recopilación de datos}: Se utilizó la curva de carga de consumos horarios del año 2022 y los costes asociados a la tarifa de acceso y excesos de potencia publicados en enero de 2022.
+    \item \textbf{Análisis de la tarifa}: Se identificaron los costes del término de potencia y los excesos de potencia para la tarifa 6.1TD.
+    \item \textbf{Uso de herramientas de optimización}: Se empleó una hoja de cálculo con la función Solver para determinar la potencia óptima de contratación en cada periodo.
+\end{enumerate}
+
+\section{Resultados}
+Tras el análisis, se obtuvieron los siguientes resultados:
+
+
+
+El coste total anual con la potencia optimizada es de \textbf{20,704.5 €}, lo que representa un ahorro de aproximadamente \textbf{13,000 €} al año en comparación con la configuración anterior.
+
+\section{Conclusiones}
+\begin{itemize}
+    \item La optimización de la potencia contratada permite reducir significativamente los costes energéticos.
+    \item La herramienta Solver proporciona una solución aproximada pero efectiva para determinar la potencia óptima.
+    \item Es fundamental analizar periódicamente la curva de consumo y ajustar la potencia contratada para evitar excesos y minimizar costes.
+\end{itemize}
+
+\section{Recomendaciones}
+\begin{itemize}
+    \item Implementar un sistema de monitorización continua del consumo para ajustar la potencia contratada de manera dinámica.
+    \item Realizar este análisis anualmente o cuando haya cambios significativos en el consumo energético de la empresa.
+    \item Considerar otras medidas de eficiencia energética para complementar la optimización de la potencia contratada.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% --- 7. REFERENCIAS BIBLIOGRÁFICAS ---
+\begin{thebibliography}{99}
+    \bibitem{ccee} \href{https://www.boe.es/buscar/pdf/2021/BOE-A-2021-7120-consolidado.pdf}{Resolución de 28 de abril de 2021, de la Dirección General de Política Energética y Minas, por la que se establece el contenido
+mínimo y el modelo de factura de electricidad a utilizar por los comercializadores de referencia.}
+
+
+\bibitem{rd244}
+\href{}{RD 244/2019  sobre autoconsumo}
+
+\bibitem{esios} 
+\href{https://www.esios.ree.es/es/pvpc}{ESIOS - Red Eléctrica de España. PVPC y datos del sistema eléctrico
+}
+
+
+\bibitem{boe}
+\href{}{Real Decreto 216/2014 por el que se establece la metodología de cálculo de los precios voluntarios para el pequeño consumidor.}
+
+
+\bibitem{boe}
+\href{https://www.cnmc.es/sites/default/files/3416756_135.pdf}{ACUERDO POR EL QUE SE CONTESTAN CONSULTAS RELATIVAS A LA
+APLICACIÓN DE LA CIRCULAR 3/2020, DE 15 DE ENERO, POR LA QUE SE
+ESTABLECE LA METODOLOGÍA PARA EL CÁLCULO DE LOS PEAJES DE
+TRANSPORTE Y DISTRIBUCIÓN DE ENERGÍA ELÉCTRICA.}
+
+
+
+
+\end{thebibliography}
+
+
+
+
+
+
+
+
+\ifdefined\MostrarVariablesAlFinal
+\newpage
+\onecolumn
+
+
+
+uu. dfPar
+
+\begin{figure}[H] \centering
+                    
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpq9tnp93m.png}
+                    \caption{Par}
+                    
+                    \label{fig:dfassssdfsa}
+                    \end{figure}
+                    
+
+uu. dfSerie1
+
+\begin{figure}[H] \centering
+                    
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpjx7l7qhc.png}
+                    \caption{Serie1}
+                    
+                    \label{fig:dfassssdfsa}
+                    \end{figure}
+                    
+
+uu. d10Generacion
+
+\begin{figure}[H] \centering
+                    
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpx13r3ozi.png}
+                    \caption{Generacion}
+                    
+                    \label{fig:dfassssdfsa}
+                    \end{figure}
+                    
+
+uu. d11GridConnected
+
+\begin{figure}[H] \centering
+                    
+                    \includegraphics[width=.5\textwidth]{/tmp/tmp3tk54lmi.png}
+                    \caption{Grid connected}
+                    
+                    \label{fig:dfassssdfsa}
+                    \end{figure}
+                    
+
+uu. tabladfPar
+
+
+                    \begin{table}[H] \centering
+                        % \resizebox{0.4\textwidth}{!}
+                        {
+                        \begin{tabular}{ll}
+\toprule
+ & eee \\
+ &  \\
+\midrule
+saD & DASD \\
+aa & 3 \\
+bb & rqwer \\
+\bottomrule
+\end{tabular}
+
+                        }
+                        \caption{Par}
+                    \end{table}
+                    
+
+xx. dfPar
+
+       eee
+          
+saD   DASD
+aa       3
+bb   rqwer
+
+xx. dfSerie1
+
+                  kWh
+Unnamed: 0           
+2022-01-01 0:0:0   13
+2022-01-01 1:0:0   14
+NaN                13
+NaN                14
+NaN                13
+...               ...
+NaN                12
+NaN                13
+NaN                12
+NaN                12
+NaN                13
+
+[8760 rows x 1 columns]
+
+xx. d10Generacion
+
+                       P
+kWh_hora                
+2024-01-01 00:00:00  0.0
+2024-01-01 01:00:00  0.0
+2024-01-01 02:00:00  0.0
+2024-01-01 03:00:00  0.0
+2024-01-01 04:00:00  0.0
+...                  ...
+2024-12-31 19:00:00  0.0
+2024-12-31 20:00:00  0.0
+2024-12-31 21:00:00  0.0
+2024-12-31 22:00:00  0.0
+2024-12-31 23:00:00  0.0
+
+[8784 rows x 1 columns]
+
+xx. d11GridConnected
+
+0      59.34
+1      76.59
+2     114.63
+3     138.50
+4     167.11
+5     177.06
+6     189.44
+7     167.37
+8     127.58
+9      92.78
+10     61.00
+11     51.87
+Name: E_m, dtype: float64
+\fi
+\end{Form}
+\end{document}
+
