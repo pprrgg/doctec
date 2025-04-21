@@ -14,8 +14,7 @@ import config from "./configURL";
 import XLSXUploaderStoragePrecargaxDefectoHojaModal from "./XLSXUploaderStoragePrecargaxDefectoHojaModal";
 import TuneIcon from "@mui/icons-material/Tune";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 pdfjsLib.GlobalWorkerOptions.workerSrc = `/workers/3.11.174/pdf.worker.min.js`;
 
 const PDFRenderer = () => {
@@ -234,7 +233,7 @@ const PDFRenderer = () => {
             onClick={abrirModalx}
             style={{
               position: "fixed",
-              top: "200px",
+              top: "70px",
               right: "16px",
               zIndex: 1300,
               boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
@@ -268,9 +267,6 @@ const PDFRenderer = () => {
         cerrarModalx={cerrarModalx}
         handleRecalculate={handleRecalculate}
       />
-
-                  <ToastContainer />
-      
     </div>
   );
 };

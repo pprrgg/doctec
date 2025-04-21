@@ -246,7 +246,7 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
                             <Box sx={{ overflowX: 'auto' }}>
                                 <Tabs value={activeTab} onChange={handleTabChange} variant="scrollable" scrollButtons="auto">
                                     {Object.keys(excelDataFromSession)
-                                        .filter(sheet => !sheet.toLowerCase().includes('sheet'))
+                                        .filter(sheet => !sheet.toLowerCase().includes('serie'))
                                         .map((sheet, index) => (
                                             <Tab key={index} label={sheet} />
                                         ))}
