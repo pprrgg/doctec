@@ -77,11 +77,43 @@ Roman
 
 
     
+\newpage
 
 
 
 
 
+
+\section*{6.1. Facturación por potencia}
+
+La Circular 3/2020 establece que la facturación por potencia contratada será:
+
+\[ FP = \sum_{p=1}^{i} T_{pp} \times P_{cp} \]
+
+Donde:
+\begin{itemize}
+    \item $FP$: Facturación de la potencia
+    \item $T_{pp}$: Precio del término de potencia del periodo horario $p$, en €/kW y año
+    \item $P_{cp}$: Potencia contratada en el período horario $p$, en kW
+    \item $i$: Número de periodos horarios del término de facturación de potencia
+\end{itemize}
+
+La facturación se prorrateará por el número de días del año que comprende el periodo de facturación.
+
+
+\begin{table}[h]
+\centering
+\caption{Ejemplo de facturación por potencia contratada para peaje 3.0 TD}
+\begin{tabular}{lcccccc}
+\toprule
+Concepto & P1 & P2 & P3 & P4 & P5 & P6 \\
+\midrule
+Potencia contratada (kW) & 20 & 40 & 40 & 40 & 100 & 100 \\
+Término de potencia (€/kW y año) & 10,6469 & 9,3030 & 3,7513 & 2,8521 & 1,1453 & 1,1453 \\
+Facturación por potencia (€) & 17,50 & 30,59 & 12,33 & 9,38 & 9,41 & 9,41 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
 
@@ -180,7 +212,7 @@ uu. dfparmetros
 
 \begin{figure}[H] \centering
                     
-                    \includegraphics[width=.5\textwidth]{/tmp/tmpyd30ydgr.png}
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpggvtysg8.png}
                     \caption{}
                     
                     \label{fig:dfassssdfsa}
@@ -191,7 +223,7 @@ uu. dfDH6
 
 \begin{figure}[H] \centering
                     
-                    \includegraphics[width=.5\textwidth]{/tmp/tmp12qxljc4.png}
+                    \includegraphics[width=.5\textwidth]{/tmp/tmppu24f95w.png}
                     \caption{D h6}
                     
                     \label{fig:dfassssdfsa}
@@ -202,7 +234,7 @@ uu. dfTP
 
 \begin{figure}[H] \centering
                     
-                    \includegraphics[width=.5\textwidth]{/tmp/tmpv_147u3m.png}
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpk0pa_wwm.png}
                     \caption{T p}
                     
                     \label{fig:dfassssdfsa}
@@ -213,7 +245,7 @@ uu. dfSerie1
 
 \begin{figure}[H] \centering
                     
-                    \includegraphics[width=.5\textwidth]{/tmp/tmpi6urhlhe.png}
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpt8sbfzor.png}
                     \caption{Serie1}
                     
                     \label{fig:dfassssdfsa}
@@ -224,7 +256,7 @@ uu. d30Serie
 
 \begin{figure}[H] \centering
                     
-                    \includegraphics[width=.5\textwidth]{/tmp/tmp24nv21fb.png}
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpsrhf94ck.png}
                     \caption{Serie}
                     
                     \label{fig:dfassssdfsa}
@@ -235,7 +267,7 @@ uu. d50barSerieMensualTotal
 
 \begin{figure}[H] \centering
                     
-                    \includegraphics[width=.5\textwidth]{/tmp/tmpo864e03p.png}
+                    \includegraphics[width=.5\textwidth]{/tmp/tmpn4675d48.png}
                     \caption{Serie mensual total}
                     
                     \label{fig:dfassssdfsa}
@@ -417,15 +449,15 @@ xx. dfSerie1
 time                   
 2022-01-01 0:0:0     13
 2022-01-01 1:0:0     14
-NaN                  13
-NaN                  14
-NaN                  13
+None                 13
+None                 14
+None                 13
 ...                 ...
-NaN                  12
-NaN                  13
-NaN                  12
-NaN                  12
-NaN                  13
+None                 12
+None                 13
+None                 12
+None                 12
+None                 13
 
 [8760 rows x 1 columns]
 
