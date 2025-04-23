@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\'{I}ndice}{1}{section*.1}%
+\contentsline {section}{\'{I}ndice de figuras}{1}{section*.2}%
+\contentsline {section}{Índice de tablas}{1}{section*.3}%
+\contentsline {section}{\numberline {1}Introducciótttn}{2}{section.1}%
+\contentsline {section}{\numberline {2}Metodología}{3}{section.2}%
+\contentsline {section}{\numberline {3}Resultados}{3}{section.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{3}{section.4}%
+\contentsline {section}{\numberline {5}Recomendaciones}{3}{section.5}%
+\contentsline {section}{Referencias}{3}{section.5}%
+\contentsline {section}{\numberline {6}Variables para insertar en el latex}{4}{section.6}%
+\contentsline {subsection}{\numberline {6.1}ppp. Parametros}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}xxx. DataFrames}{6}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}x2g. DataFrames para graficos}{7}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}x2t. DataFrames para tablas}{8}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}ggg. Graficos}{9}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}ttt. Tablas}{10}{subsection.6.6}%
