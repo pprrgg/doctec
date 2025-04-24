@@ -5,6 +5,7 @@ import axios from "axios";
 import * as pdfjsLib from "pdfjs-dist";
 import {
   Box,
+  Tooltip,
   Backdrop,
   CircularProgress,
   Typography,
@@ -91,10 +92,10 @@ const PDFRenderer = () => {
   const renderPdfBlob = useCallback(async (arrayBuffer) => {
     try {
       const blob = new Blob([arrayBuffer], { type: "application/pdf" });
-  
+
       const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
       if (pdf.numPages === 0) throw new Error("El PDF no tiene páginas");
-  
+
       const pages = await Promise.all(
         Array.from({ length: pdf.numPages }, async (_, i) => {
           const page = await pdf.getPage(i + 1);
@@ -111,19 +112,19 @@ const PDFRenderer = () => {
           return canvas.toDataURL("image/png");
         })
       );
-  
+
       setPdfBlob(blob); // ✅ solo seteamos si todo lo anterior salió bien
       setImages(pages);
     } catch (err) {
       setError(`Error al renderizar el PDF: ${err.message}`);
     }
   }, []);
-  
+
 
   const renderLocalPdf = useCallback(async () => {
     setLoading(true);
     try {
-    console.log(`/routers/${ENDPOINT.slice(0, -2)}_.pdf`)
+      console.log(`/routers/${ENDPOINT.slice(0, -2)}_.pdf`)
       const response = await fetch(`/routers/${ENDPOINT.slice(0, -2)}_.pdf`);
       const arrayBuffer = await response.arrayBuffer();
       await renderPdfBlob(arrayBuffer);
@@ -162,10 +163,10 @@ const PDFRenderer = () => {
 
   const handleDownload = () => {
     if (!pdfBlob) return;
-  
+
     const ep = JSON.parse(sessionStorage.getItem('selectedFicha') || 'null');
     const fileName = `DocTec_${ep?.cod || 'documento'}.pdf`;
-  
+
     const url = window.URL.createObjectURL(pdfBlob);
     const link = document.createElement("a");
     link.href = url;
@@ -177,7 +178,7 @@ const PDFRenderer = () => {
   const handleRecalculate = async () => {
     setLoading(true);         // mostramos el loader
     cerrarModalx();           // cerramos el modal
-  
+
     try {
       await renderPdfFromUrl(); // hacemos la llamada a la API
     } catch (err) {
@@ -211,40 +212,45 @@ const PDFRenderer = () => {
 
       {pdfBlob && (
         <>
-          <Button
-            variant="outlined"
-            onClick={handleDownload}
-            style={{
-              position: "fixed",
-              top: "120px",
-              right: "16px",
-              zIndex: 1300,
-              boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-              borderRadius: "18px",
-              minWidth: "48px",
-              padding: "8px",
-            }}
-          >
-            <PictureAsPdfIcon style={{ color: "#d32f2f" }} />
-          </Button>
+          <Tooltip title='Descargar en pdf'>
+            <Button
+              variant="outlined"
+              onClick={handleDownload}
+              style={{
+                position: "fixed",
+                top: "120px",
+                right: "16px",
+                zIndex: 1300,
+                boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                borderRadius: "18px",
+                minWidth: "48px",
+                padding: "8px",
+              }}
+            >
+              <PictureAsPdfIcon style={{ color: "#d32f2f" }} />
+            </Button>
+          </Tooltip>
 
-          <Button
-            variant="outlined"
-            color="secondary"
-            onClick={abrirModalx}
-            style={{
-              position: "fixed",
-              top: "200px",
-              right: "16px",
-              zIndex: 1300,
-              boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-              borderRadius: "18px",
-              minWidth: "48px",
-              padding: "8px",
-            }}
-          >
-            <TuneIcon />
-          </Button>
+          <Tooltip title='Ajustar las variables'>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={abrirModalx}
+              style={{
+                position: "fixed",
+                top: "200px",
+                right: "16px",
+                zIndex: 1300,
+                boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+                borderRadius: "18px",
+                minWidth: "48px",
+                padding: "8px",
+              }}
+            >
+              <TuneIcon />
+            </Button>
+          </Tooltip>
+
         </>
       )}
 
@@ -269,8 +275,8 @@ const PDFRenderer = () => {
         handleRecalculate={handleRecalculate}
       />
 
-                  <ToastContainer />
-      
+      <ToastContainer />
+
     </div>
   );
 };

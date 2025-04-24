@@ -174,11 +174,12 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
     }, [activeSheet, excelDataFromSession]);
 
     const menuOptions = [
-        { label: "Importar", icon: <AttachFileIcon />, onClick: handleImportar },
-        { label: "Exportar", icon: <CloudDownloadIcon />, onClick: handleExport },
-        { label: "Ubicación", icon: <MapIcon />, onClick: handleOpenMapaModal },
-        { label: "Calcular", icon: <CalculateIcon />, onClick: handleRecalculate },
+        { label: "Importar", icon: <CloudUploadIcon />, onClick: handleImportar, bgColor: '#388e3c' }, // azul
+        { label: "Exportar", icon: <CloudDownloadIcon />, onClick: handleExport, bgColor: '#388e3c' }, // verde
+        { label: "Ubicación", icon: <MapIcon />, onClick: handleOpenMapaModal, bgColor: '#fbc02d' }, // amarillo
+        { label: "Calcular", icon: <CalculateIcon />, onClick: handleRecalculate, bgColor: '#d32f2f' }, // rojo
     ];
+
 
     return (
         <>
@@ -201,8 +202,8 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
                         onClick={cerrarModalx}
                         sx={{
                             position: "absolute",
-                            top: 8,
-                            right: 8,
+                            top: 3,
+                            right: 3,
                             zIndex: 10,
                             color: "grey.700"
                         }}
@@ -219,21 +220,45 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
                                         </IconButton>
                                         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
                                             {menuOptions.map((option, index) => (
-                                                <MenuItem key={index} onClick={option.onClick}>
+                                                <Button
+                                                    key={index}
+                                                    onClick={option.onClick}
+                                                    sx={{
+                                                        backgroundColor: option.bgColor,
+                                                        color: "white",
+                                                        "&:hover": {
+                                                            backgroundColor: option.bgColor,
+                                                            opacity: 0.85,
+                                                        },
+                                                    }}
+                                                >
                                                     {option.icon}
                                                     <span style={{ marginLeft: "8px" }}>{option.label}</span>
-                                                </MenuItem>
+                                                </Button>
                                             ))}
+
                                         </Menu>
                                     </>
                                 ) : (
                                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                                         {menuOptions.map((option, index) => (
-                                            <Button key={index} onClick={option.onClick} sx={{ color: "black" }}>
+                                            <Button
+                                                key={index}
+                                                onClick={option.onClick}
+                                                sx={{
+                                                    backgroundColor: option.bgColor,
+                                                    color: "white",
+                                                    "&:hover": {
+                                                        backgroundColor: option.bgColor,
+                                                        opacity: 0.85,
+                                                    },
+                                                }}
+                                            >
                                                 {option.icon}
                                                 <span style={{ marginLeft: "8px" }}>{option.label}</span>
                                             </Button>
                                         ))}
+
                                     </Box>
                                 )}
                                 <Box sx={{ flexGrow: 1 }} />
