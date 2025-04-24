@@ -362,8 +362,6 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
                                                             )}
                                                         </TableCell>
 
-
-
                                                     );
                                                 })}
                                             </TableRow>
