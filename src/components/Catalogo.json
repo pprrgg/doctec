@@ -17,10 +17,26 @@
     },
     {
         "categoria": "libre",
+        "codigo": "AEP020 OPTIMIZACIÓN DE POTENCIA COPY",
+        "sector": "Término_De_Potencia",
+        "grupo": "Asesoría_Energética",
+        "cod": "Aep020OptimizaciónDePotenciaCopy",
+        "co": "AEP020O"
+    },
+    {
+        "categoria": "libre",
         "codigo": "AEP030 OPTIMIZACIÓN DE POTENCIA",
         "sector": "Término_De_Potencia",
         "grupo": "Asesoría_Energética",
         "cod": "Aep030OptimizaciónDePotencia",
+        "co": "AEP030O"
+    },
+    {
+        "categoria": "libre",
+        "codigo": "AEP030 OPTIMIZACIÓN DE POTENCIA COPY",
+        "sector": "Término_De_Potencia",
+        "grupo": "Asesoría_Energética",
+        "cod": "Aep030OptimizaciónDePotenciaCopy",
         "co": "AEP030O"
     }
 ]
