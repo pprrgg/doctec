@@ -57,39 +57,28 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
     const handleTabChange = (event, newValue) => setActiveTab(newValue);
     const handleOpenMapaModal = () => setOpenMapaModal(true);
     const handleCloseMapaModal = () => setOpenMapaModal(false);
-
     const handleFileUpload = (file) => {
         if (!file) return;
-
+    
         const reader = new FileReader();
         reader.onload = (e) => {
             const data = new Uint8Array(e.target.result);
             const workbook = XLSX.read(data, { type: "array" });
             const sheetsData = {};
-
+    
             workbook.SheetNames.forEach((sheetName) => {
                 const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
                 const filledSheet = sheet.map((row) => row.map((cell) => (cell === null || cell === undefined ? " " : cell)));
                 const filteredSheet = filledSheet.filter((row) => row.some((cell) => cell !== ""));
                 sheetsData[sheetName] = filteredSheet;
             });
-
-            const selectedValues = JSON.parse(JSON.stringify(sheetsData));
-            Object.keys(selectedValues).forEach((sheetName) => {
-                selectedValues[sheetName].forEach((row, rowIndex) => {
-                    row.forEach((cell, cellIndex) => {
-                        if (typeof cell === 'string' && cell.includes(';')) {
-                            selectedValues[sheetName][rowIndex][cellIndex] = cell.split(';')[0].trim();
-                        }
-                    });
-                });
-            });
-
-            sessionStorage.setItem("excelData", JSON.stringify(selectedValues));
-            setExcelDataFromSession(selectedValues);
+    
+            // Guardar los datos originales sin modificar
+            sessionStorage.setItem("excelData", JSON.stringify(sheetsData));
+            setExcelDataFromSession(sheetsData);
             toast.success("¡Archivo cargado correctamente!");
         };
-
+    
         reader.readAsArrayBuffer(file);
     };
 
