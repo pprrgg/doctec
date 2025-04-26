@@ -59,26 +59,26 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
     const handleCloseMapaModal = () => setOpenMapaModal(false);
     const handleFileUpload = (file) => {
         if (!file) return;
-    
+
         const reader = new FileReader();
         reader.onload = (e) => {
             const data = new Uint8Array(e.target.result);
             const workbook = XLSX.read(data, { type: "array" });
             const sheetsData = {};
-    
+
             workbook.SheetNames.forEach((sheetName) => {
                 const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
                 const filledSheet = sheet.map((row) => row.map((cell) => (cell === null || cell === undefined ? " " : cell)));
                 const filteredSheet = filledSheet.filter((row) => row.some((cell) => cell !== ""));
                 sheetsData[sheetName] = filteredSheet;
             });
-    
+
             // Guardar los datos originales sin modificar
             sessionStorage.setItem("excelData", JSON.stringify(sheetsData));
             setExcelDataFromSession(sheetsData);
             toast.success("¡Archivo cargado correctamente!");
         };
-    
+
         reader.readAsArrayBuffer(file);
     };
 
@@ -174,6 +174,31 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
         <>
             <Modal open={openx} onClose={cerrarModalx} BackdropComponent={Backdrop} BackdropProps={{ onClick: cerrarModalx }}>
                 <Box
+                    onDragOver={(e) => e.preventDefault()}
+                    onDrop={(e) => {
+                        e.preventDefault();
+                        const file = e.dataTransfer.files[0];
+                        const ep = JSON.parse(sessionStorage.getItem('selectedFicha') || 'null');
+                    
+                        if (!file) return;
+                    
+                        if (!file.name.toLowerCase().endsWith(".xlsx") && !file.name.toLowerCase().endsWith(".xls")) {
+                            toast.error("Sólo se permiten archivos Excel (.xlsx, .xls)");
+                            return;
+                        }
+                    
+                        if (!ep || !ep.cod) {
+                            toast.error("No se encontró el código de referencia para validar el archivo.");
+                            return;
+                        }
+                    
+                        if (!file.name.toLowerCase().includes(ep.cod.toLowerCase())) {
+                            toast.error(`El archivo debe ser 'DocTec_${ep.cod}_******** '.`);
+                            return;
+                        }
+                    
+                        handleFileUpload(file);
+                    }}
                     sx={{
                         position: "absolute",
                         top: "50%",
@@ -185,6 +210,7 @@ const ExcelUploaderStorage = ({ openx, cerrarModalx, handleRecalculate }) => {
                         boxShadow: 24,
                         p: 4,
                         overflowY: "auto",
+                        // border: "2px dashed #aaa", // Opcional: para mostrar que se puede soltar
                     }}
                 >
                     <IconButton
