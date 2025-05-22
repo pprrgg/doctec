@@ -266,7 +266,7 @@ const HomePage = () => {
         sx={{
           py: 6,
           textAlign: "center",
-          backgroundColor: "#f5f7fa",
+          backgroundColor: "#f5f7ff",
           borderRadius: 2,
           position: "relative",
         }}
