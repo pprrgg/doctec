@@ -44,7 +44,6 @@ const HomePage = () => {
     autoplaySpeed: 3000,
   };
 
-  // Datos para el slider y cards con iconos MUI grandes, ampliados con nuevos servicios
   const cardsData = [
     {
       id: 1,
@@ -54,6 +53,7 @@ const HomePage = () => {
       description_en: "Energy savings calculation through standardized measure sheets.",
       icon: <EnergySavingsLeafIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs",
+      image: "/img/certificados de ahorro energetico cae.jpeg",
     },
     {
       id: 2,
@@ -63,16 +63,9 @@ const HomePage = () => {
       description_en: "Creation, activation, and management of local energy communities.",
       icon: <GroupsIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/ComunidadEnergetica",
+      image: "/img/comunidades-energeticas.jpeg",
     },
-    {
-      id: 3,
-      title_es: "Eficiencia Energética",
-      title_en: "Energy Efficiency",
-      description_es: "Optimización del consumo energético en instalaciones.",
-      description_en: "Optimization of energy consumption in facilities.",
-      icon: <BoltIcon sx={{ fontSize: 60, color: primaryColor }} />,
-      link: "/Docs",
-    },
+
     {
       id: 4,
       title_es: "Autoconsumo",
@@ -81,6 +74,7 @@ const HomePage = () => {
       description_en: "Generation and use of own energy to reduce costs.",
       icon: <SolarPowerIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs",
+      image: "/img/autoconsumo.jpeg",
     },
     {
       id: 5,
@@ -90,6 +84,7 @@ const HomePage = () => {
       description_en: "Detailed assessment of energy consumption and efficiency.",
       icon: <EngineeringIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs/auditorias",
+      image: "/img/auditorias-energeticas.jpeg",
     },
     {
       id: 6,
@@ -99,6 +94,7 @@ const HomePage = () => {
       description_en: "Management to reduce costs and avoid penalties.",
       icon: <BoltIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs/optimizacion-potencia",
+      image: "/img/optimizacion-de-potencia-contratada.jpeg",
     },
     {
       id: 7,
@@ -108,16 +104,9 @@ const HomePage = () => {
       description_en: "Continuous monitoring and analysis of energy consumption.",
       icon: <EnergySavingsLeafIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs/gestion-energia",
+      image: "/img/gestion-y-monitoreo-energetico.jpeg",
     },
-    {
-      id: 8,
-      title_es: "Tecnologías de Ahorro Energético",
-      title_en: "Energy Saving Technologies",
-      description_es: "Implementación de LED, mejoras HVAC y otras tecnologías.",
-      description_en: "Implementation of LED lighting, HVAC upgrades and more.",
-      icon: <EngineeringIcon sx={{ fontSize: 60, color: primaryColor }} />,
-      link: "/Docs/tecnologias-ahorro",
-    },
+
     {
       id: 9,
       title_es: "Almacenamiento en Baterías de Litio",
@@ -126,6 +115,7 @@ const HomePage = () => {
       description_en: "Systems to store energy and optimize its use.",
       icon: <BatteryChargingFullIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs/almacenamiento-baterias",
+      image: "/img/Almacenamiento en Baterías de Litio.jpeg",
     },
     {
       id: 10,
@@ -135,8 +125,10 @@ const HomePage = () => {
       description_en: "Solutions to efficiently charge electric vehicles.",
       icon: <EvStationIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs/recarga-vehiculos",
+      image: "public/img/recarga-de-coches-electricos.jpeg",
     },
   ];
+
 
   // Preguntas frecuentes (FAQ) ampliadas
   const accordionData = [
@@ -318,29 +310,35 @@ const HomePage = () => {
                     Ver más / See more
                   </Button>
                 </div>
-                {/* Imagen */}
-                <div style={{ flex: 1, height: "100%", minWidth: "50%", minHeight: "100%" }}>
-                  <CardMedia
-                    component="img"
-                    image={card.icon ? undefined : card.image}
-                    alt={card.title_es}
-                    sx={{ width: "100%", height: "100%", objectFit: "contain", backgroundColor: "white" }}
-                  />
-                  {!card.image && (
-                    <div
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        backgroundColor: "white",
-                      }}
-                    >
-                      {card.icon}
-                    </div>
-                  )}
-                </div>
+                <div style={{ flex: 1, height: "100%", minWidth: "50%", minHeight: "100%", backgroundColor: "white" }}>
+  {card.image ? (
+    <CardMedia
+      component="img"
+      image={card.image}
+      alt={card.title_es}
+      sx={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",  // Llena el contenedor recortando si es necesario
+        display: "block",
+      }}
+    />
+  ) : (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {card.icon}
+    </div>
+  )}
+</div>
+
+
               </div>
             </div>
           ))}
@@ -422,10 +420,6 @@ const HomePage = () => {
                   textAlign: "center",
                   boxSizing: "border-box",
                 }}
-
-
-
-
               >
                 {card.icon && <div style={{ marginBottom: 16 }}>{card.icon}</div>}
                 <CardContent sx={{ flexGrow: 1 }}>
@@ -506,7 +500,7 @@ const HomePage = () => {
           sx={{ fontWeight: "bold", mb: 1, color: primaryColor }}
         >
           ¿Qué puedes encontrar aquí? / What can you find here?
-          </Typography>
+        </Typography>
         {alternatingData.map((item, index) => (
           <Grid
             container
