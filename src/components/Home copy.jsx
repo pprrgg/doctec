@@ -31,7 +31,7 @@ import { Box } from "@mui/material";
 
 const HomePage = () => {
   const theme = useTheme();
-  const primaryColor = "#1976d2";
+  const primaryColor = "#5778fa";
 
   const carouselSettings = {
     dots: true,
