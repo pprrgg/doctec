@@ -126,14 +126,14 @@ function ResponsiveAppBar({ filePath, abrirModal, abrirModalx, handleRecalculate
                             padding: "2px 4px",
                         }}
                     >
-                        DOC
+                        Watt
                         <span style={{
                             color: "white",
                             backgroundColor: fuchsiaColor, // Fondo fucsia
                             padding: "0px 2px",
                             borderRadius: "4px",
                         }}>
-                            TEC
+                            Bucket
                         </span>
                     </Typography>
 
@@ -187,14 +187,14 @@ function ResponsiveAppBar({ filePath, abrirModal, abrirModalx, handleRecalculate
                                 padding: "2px 1px",
                             }}
                         >
-                            DOC
+                            Watt
                             <span style={{
                                 color: "white",
                                 backgroundColor: fuchsiaColor, // Fondo fucsia
                                 padding: "0px 2px",
                                 borderRadius: "4px",
                             }}>
-                                TEC
+                                Bucket
                             </span>
                         </span>
                     </Typography>
@@ -254,7 +254,7 @@ function ResponsiveAppBar({ filePath, abrirModal, abrirModalx, handleRecalculate
                             </>
                         ) : (
                             <IconButton component={Link} to="/login" sx={{ color: primaryColor }}>
-                                {/* < PersonOutlineIcon/> */}
+                                < PersonOutlineIcon/>
                             </IconButton>
                         )}
                     </Box>

@@ -20,6 +20,7 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import CropSquareIcon from "@mui/icons-material/CropSquare";
 import FlashOnIcon from "@mui/icons-material/FlashOn"
+import GroupsIcon from "@mui/icons-material/Groups";
 
 
 import EvStationIcon from '@mui/icons-material/EvStation';
@@ -56,6 +57,15 @@ const HomePage = () => {
     },
     {
       id: 2,
+      title_es: "Comunidades Energéticas",
+      title_en: "Energy Communities",
+      description_es: "Creación, dinamización y gestión de comunidades locales de energía.",
+      description_en: "Creation, activation, and management of local energy communities.",
+      icon: <GroupsIcon sx={{ fontSize: 60, color: primaryColor }} />,
+      link: "/ComunidadEnergetica",
+    },
+    {
+      id: 3,
       title_es: "Eficiencia Energética",
       title_en: "Energy Efficiency",
       description_es: "Optimización del consumo energético en instalaciones.",
@@ -64,7 +74,7 @@ const HomePage = () => {
       link: "/Docs",
     },
     {
-      id: 3,
+      id: 4,
       title_es: "Autoconsumo",
       title_en: "Self-consumption",
       description_es: "Generación y uso de energía propia para reducir costos.",
@@ -73,7 +83,7 @@ const HomePage = () => {
       link: "/Docs",
     },
     {
-      id: 4,
+      id: 5,
       title_es: "Auditorías Energéticas",
       title_en: "Energy Audits",
       description_es: "Evaluación detallada del consumo y eficiencia energética.",
@@ -82,7 +92,7 @@ const HomePage = () => {
       link: "/Docs/auditorias",
     },
     {
-      id: 5,
+      id: 6,
       title_es: "Optimización de Potencia Contratada",
       title_en: "Power Optimization",
       description_es: "Gestión para reducir costos y evitar penalizaciones.",
@@ -91,7 +101,7 @@ const HomePage = () => {
       link: "/Docs/optimizacion-potencia",
     },
     {
-      id: 6,
+      id: 7,
       title_es: "Gestión y Monitoreo Energético",
       title_en: "Energy Management & Monitoring",
       description_es: "Monitoreo y análisis continuo del consumo energético.",
@@ -100,7 +110,7 @@ const HomePage = () => {
       link: "/Docs/gestion-energia",
     },
     {
-      id: 7,
+      id: 8,
       title_es: "Tecnologías de Ahorro Energético",
       title_en: "Energy Saving Technologies",
       description_es: "Implementación de LED, mejoras HVAC y otras tecnologías.",
@@ -109,7 +119,7 @@ const HomePage = () => {
       link: "/Docs/tecnologias-ahorro",
     },
     {
-      id: 8,
+      id: 9,
       title_es: "Almacenamiento en Baterías de Litio",
       title_en: "Lithium Battery Storage",
       description_es: "Sistemas para almacenar energía y optimizar su uso.",
@@ -118,7 +128,7 @@ const HomePage = () => {
       link: "/Docs/almacenamiento-baterias",
     },
     {
-      id: 9,
+      id: 10,
       title_es: "Recarga de Coches Eléctricos",
       title_en: "Electric Vehicle Charging",
       description_es: "Soluciones para cargar vehículos eléctricos eficientemente.",
@@ -138,11 +148,13 @@ const HomePage = () => {
       link: "/docs/cae-info",
     },
     {
-      title_es: "¿Qué incluye DocTec.blog?",
-      title_en: "What does DocTec.blog include?",
-      content_es: "Plantillas personalizables para informes técnicos y cálculos.",
-      content_en: "Customizable templates for technical reports and calculations.",
-      link: "/docs/contenido",
+      title_es: "¿Con quiénes se puede crear una comunidad energética?",
+      title_en: "Who can create an energy community?",
+      content_es:
+        "Una comunidad energética puede estar formada por ciudadanos, pymes, ayuntamientos o entidades locales que colaboran para generar, consumir y gestionar energía de forma colectiva.",
+      content_en:
+        "An energy community can be formed by citizens, SMEs, municipalities or local entities collaborating to collectively generate, consume, and manage energy.",
+      link: "/docs/comunidades-energeticas",
     },
     {
       title_es: "¿Qué es una auditoría energética?",
@@ -337,41 +349,10 @@ const HomePage = () => {
           position: "relative",
         }}
       >
-        {/* Icono personalizado: Cubo + Rayo */}
-        <Box
-          sx={{
-            position: "relative",
-            width: 90,
-            height: 90,
-            margin: "0 auto",
-            mb: 2,
-          }}
-        >
-          <CropSquareIcon
-            sx={{
-              fontSize: 90,
-              color: primaryColor,
-              opacity: 0.8,
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: 1,
-            }}
-          />
-          <FlashOnIcon
-            sx={{
-              fontSize: 60,
-              color: "#f4b400",
-              position: "absolute",
-              top: 15,
-              left: 15,
-              zIndex: 2,
-              filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.2))",
-            }}
-          />
-        </Box>
+
 
         {/* Título y eslogan */}
+
         <Typography
           variant="h2"
           component="h1"
@@ -384,14 +365,20 @@ const HomePage = () => {
           color="textPrimary"
           sx={{ fontWeight: 500, mb: 0.5 }}
         >
-          Soluciones energéticas que ahorran hoy y transforman el mañana.
+          <Box component="span" sx={{ fontWeight: 900 }}>
+            Soluciones energéticas
+          </Box>{" "}
+          que ahorran hoy y transforman el mañana.
         </Typography>
         <Typography
           variant="h6"
           color="textSecondary"
           sx={{ fontWeight: 400, fontStyle: "italic" }}
         >
-          Energy solutions that save today and transform tomorrow.
+          <Box component="span" sx={{ fontWeight: 600 }}>
+            Energy solutions
+          </Box>{" "}
+          that save today and transform tomorrow.
         </Typography>
       </Container>
 
