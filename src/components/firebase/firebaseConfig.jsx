@@ -10,7 +10,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCVbe_HdaWJEkDAVBfwehi9EyGFLrirTsw",
+    apiKey: "AIzaSyCVbfasasfsadSSSdfasdfdsAJoderseLrirTsw",
     authDomain: "calcae.firebaseapp.com",
     projectId: "calcae",
     storageBucket: "calcae.firebasestorage.app",
