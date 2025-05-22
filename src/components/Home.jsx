@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import {
   Container,
   Typography,
@@ -35,6 +37,8 @@ import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
 
 const HomePage = () => {
+      const navigate = useNavigate();
+  
   const theme = useTheme();
   const primaryColor = "#1976d2";
 
@@ -58,9 +62,9 @@ const HomePage = () => {
       icon: <EnergySavingsLeafIcon sx={{ fontSize: 60, color: primaryColor }} />,
       link: "/Docs",
       image: "/img/certificados de ahorro energetico cae.jpeg",
-      group: "Certificados_de_ahorro_energetico_cae",
+      group: "",
       sector: "",
-      searchtext: "",
+      searchtext: "pool",
     },
     {
       id: 2,
@@ -293,7 +297,9 @@ const HomePage = () => {
     setSelectedGroup(group);
     setSelectedSector(sector);
     setSearchText(searchtext);
-    window.location.href = link;
+    // window.location.href = link;
+    navigate(link);
+
   };
 
 
