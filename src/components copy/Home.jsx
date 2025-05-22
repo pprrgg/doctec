@@ -189,7 +189,7 @@ const HomePage = () => {
 
 
         <Typography variant="h3" align="center" gutterBottom>
-        Bienvenido a DocTec.blog
+        Bienvenido a WattBucket.blog
         </Typography>
 
         <Typography variant="subtitle1" align="center" color="textSecondary" paragraph>

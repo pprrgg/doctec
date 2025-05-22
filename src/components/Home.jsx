@@ -262,82 +262,90 @@ const HomePage = () => {
   return (
     <div>
       {/* Espacio superior */}
-      <Container sx={{ py: 4 }}></Container>
+      <Container
+        sx={{
+          py: 6,
+          textAlign: "center",
+          backgroundColor: "#f5f7fa",
+          borderRadius: 2,
+          position: "relative",
+        }}
+      >
 
-      {/* Slider principal */}
-      <Slider {...carouselSettings}>
-        {cardsData.map((card) => (
-          <div key={card.id}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                height: "400px",
-                border: "1px solid",
-                borderColor: primaryColor,
-                borderRadius: "8px",
-                overflow: "hidden",
-              }}
-            >
-              {/* Texto y botón */}
+        {/* Slider principal */}
+        <Slider {...carouselSettings}>
+          {cardsData.map((card) => (
+            <div key={card.id}>
               <div
                 style={{
-                  flex: 1,
-                  padding: "20px 40px",
-                  height: "100%",
-                  background: `linear-gradient(to right, ${primaryColor}, transparent)`,
                   display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "flex-start",
-                  textAlign: "left",
-                  color: "white",
+                  alignItems: "center",
+                  height: "400px",
+                  border: "1px solid",
+                  borderColor: primaryColor,
+                  borderRadius: "8px",
+                  overflow: "hidden",
                 }}
               >
-                <Typography variant="h4" sx={{ fontWeight: "bold", mb: 1 }}>
-                  {card.title_es}
-                </Typography>
-                <Typography variant="subtitle1" sx={{ fontStyle: "italic", mb: 1, opacity: 0.7 }}>
-                  {card.title_en}
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 2 }}>
-                  {card.description_es}
-                </Typography>
-                <Typography variant="body2" sx={{ fontStyle: "italic", mb: 3, opacity: 0.7 }}>
-                  {card.description_en}
-                </Typography>
-                <Button variant="contained" color="secondary" onClick={() => handleButtonClick(card.link)}>
-                  Ver más / See more
-                </Button>
-              </div>
-              {/* Imagen */}
-              <div style={{ flex: 1, height: "100%", minWidth: "50%", minHeight: "100%" }}>
-                <CardMedia
-                  component="img"
-                  image={card.icon ? undefined : card.image}
-                  alt={card.title_es}
-                  sx={{ width: "100%", height: "100%", objectFit: "contain", backgroundColor: "white" }}
-                />
-                {!card.image && (
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: "white",
-                    }}
-                  >
-                    {card.icon}
-                  </div>
-                )}
+                {/* Texto y botón */}
+                <div
+                  style={{
+                    flex: 1,
+                    padding: "20px 40px",
+                    height: "100%",
+                    background: `linear-gradient(to right, ${primaryColor}, transparent)`,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "flex-start",
+                    textAlign: "left",
+                    color: "white",
+                  }}
+                >
+                  <Typography variant="h4" sx={{ fontWeight: "bold", mb: 1 }}>
+                    {card.title_es}
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontStyle: "italic", mb: 1, opacity: 0.7 }}>
+                    {card.title_en}
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 2 }}>
+                    {card.description_es}
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontStyle: "italic", mb: 3, opacity: 0.7 }}>
+                    {card.description_en}
+                  </Typography>
+                  <Button variant="contained" color="secondary" onClick={() => handleButtonClick(card.link)}>
+                    Ver más / See more
+                  </Button>
+                </div>
+                {/* Imagen */}
+                <div style={{ flex: 1, height: "100%", minWidth: "50%", minHeight: "100%" }}>
+                  <CardMedia
+                    component="img"
+                    image={card.icon ? undefined : card.image}
+                    alt={card.title_es}
+                    sx={{ width: "100%", height: "100%", objectFit: "contain", backgroundColor: "white" }}
+                  />
+                  {!card.image && (
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        backgroundColor: "white",
+                      }}
+                    >
+                      {card.icon}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-
+          ))}
+        </Slider>
+      </Container>
 
 
       <Container
@@ -349,9 +357,6 @@ const HomePage = () => {
           position: "relative",
         }}
       >
-
-
-        {/* Título y eslogan */}
 
         <Typography
           variant="h2"
@@ -384,8 +389,15 @@ const HomePage = () => {
 
 
       {/* Cards principales con iconos grandes */}
-      <Container sx={{ py: 4 }}>
-        <Grid container spacing={4}>
+      <Container
+        sx={{
+          py: 6,
+          textAlign: "center",
+          backgroundColor: "#f5f7fa",
+          borderRadius: 2,
+          position: "relative",
+        }}
+      >        <Grid container spacing={4}>
           {cardsData.map((card) => (
             <Grid item key={card.id} xs={12} sm={6} md={4}>
               <Card
@@ -440,10 +452,23 @@ const HomePage = () => {
       </Container>
 
       {/* Preguntas frecuentes bilingües */}
-      <Container sx={{ py: 4 }}>
-        <Typography variant="h4" gutterBottom>
+      <Container
+        sx={{
+          py: 6,
+          textAlign: "center",
+          backgroundColor: "#f5fffa",
+          borderRadius: 2,
+          position: "relative",
+        }}
+      >
+        <Typography
+          variant="h3"
+          component="h1"
+          sx={{ fontWeight: "bold", mb: 1, color: primaryColor }}
+        >
           Preguntas frecuentes / Frequently Asked Questions
         </Typography>
+
         {accordionData.map((item, index) => (
           <Accordion key={index}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -465,10 +490,23 @@ const HomePage = () => {
       </Container>
 
       {/* Sección informativa alternada bilingüe */}
-      <Container sx={{ py: 4 }}>
-        <Typography variant="h4" gutterBottom>
+      <Container
+        sx={{
+          py: 6,
+          textAlign: "center",
+          backgroundColor: "#fff7fa",
+          borderRadius: 2,
+          position: "relative",
+        }}
+      >
+
+        <Typography
+          variant="h3"
+          component="h1"
+          sx={{ fontWeight: "bold", mb: 1, color: primaryColor }}
+        >
           ¿Qué puedes encontrar aquí? / What can you find here?
-        </Typography>
+          </Typography>
         {alternatingData.map((item, index) => (
           <Grid
             container

@@ -25,7 +25,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     
-    const mailtoLink = `mailto:doctecblog@gmail.com?subject=Mensaje de ${formValues.name}&body=Nombre: ${formValues.name}%0AEmail: ${formValues.email}%0AMensaje: ${formValues.message}`;
+    const mailtoLink = `mailto:info@wattbucket.com?subject=Mensaje de ${formValues.name}&body=Nombre: ${formValues.name}%0AEmail: ${formValues.email}%0AMensaje: ${formValues.message}`;
 
     if (formValues.name && formValues.email && formValues.message) {
       window.location.href = mailtoLink;
@@ -76,7 +76,7 @@ const ContactForm = () => {
                       },
 
                     }}
-                    onClick={() => { window.location.href = 'mailto:doctecblog@gmail.com' }} // Maneja el clic del botón
+                    onClick={() => { window.location.href = 'mailto:info@wattbucket.com' }} // Maneja el clic del botón
                   />
                   <PhoneOutlinedIcon
                     sx={{
@@ -107,7 +107,7 @@ const ContactForm = () => {
                 Teléfono: +34 951 73 34 91
               </Typography>
               <Typography variant="h6" align="center" sx={{ mt: 1 }}>
-                Email: doctecblog@gmail.com
+                Email: info@wattbucket.com
               </Typography>
             </Grid>
 

@@ -30,7 +30,7 @@ const AboutUs = () => {
           <h2>Contáctanos</h2>
           <p><strong>Dirección:</strong> C. Moby Dick, 30. 29004 Málaga</p>
           <p><strong>Teléfono:</strong> +34 951 73 34 91</p>
-          <p><strong>Email:</strong> doctecblog@gmail.com</p>
+          <p><strong>Email:</strong> info@wattbucket.com</p>
         </section>
       </div>
     </div>

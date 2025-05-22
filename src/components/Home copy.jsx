@@ -138,8 +138,8 @@ const HomePage = () => {
       link: "/docs/cae-info",
     },
     {
-      title_es: "¿Qué incluye DocTec.blog?",
-      title_en: "What does DocTec.blog include?",
+      title_es: "¿Qué incluye WattBucket.blog?",
+      title_en: "What does WattBucket.blog include?",
       content_es: "Plantillas personalizables para informes técnicos y cálculos.",
       content_en: "Customizable templates for technical reports and calculations.",
       link: "/docs/contenido",

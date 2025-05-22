@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
         Si tiene alguna pregunta o inquietud sobre esta política de privacidad o nuestras prácticas de manejo de datos, contáctenos en:
       </p>
       <ul>
-        <li><strong>Correo electrónico</strong>: doctecblog@gmail.com</li>
+        <li><strong>Correo electrónico</strong>: info@wattbucket.com</li>
         <li><strong>Dirección</strong>: C. Moby Dick, 30. 29004 Málaga</li>
       </ul>
     </div>
