@@ -493,7 +493,9 @@ const HomePage = () => {
                       {card.description_en}
                     </Typography>
                   </CardContent>
-                  <Button variant="contained" color="secondary" onClick={() => handleButtonClick(card.link)}>
+                  <Button variant="contained" color="secondary" 
+                  onClick={() => handleButtonClick(card.group, card.sector, card.searchtext, card.link)}
+                  >
                     Ver más / See more
                   </Button>
                 </Card>
